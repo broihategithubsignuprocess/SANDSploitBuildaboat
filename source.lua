@@ -466,14 +466,18 @@ function Encode(blocks, team)
 
     teamPlate = team and Teams[team] or GetPlot()
 
-    for _, v in next, blocks do
+    print("1", teamPlate)
+    print("2", blocks)
+
+    for i, v in next, blocks do
+        print(("b%d"):format(i), v)
         local blockName = v.Name
         local PPart     = v.PPart
 
         if not (jsonTable[blockName]) then jsonTable[blockName] = {} end
 
         local spacePosition = ToObjectSpace(teamPlate.CFrame, PPart.CFrame)
-
+        
         insert(jsonTable[blockName], {
             Rotation = GetStringAngles(spacePosition),
             Position = String(spacePosition.p),
