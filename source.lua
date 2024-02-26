@@ -88,6 +88,8 @@ Discord.TextSize = 14.000
 UICorner_4.CornerRadius = UDim.new(0, 3)
 UICorner_4.Parent = Discord
 
+local request = (syn and syn.request) or (fluxus and fluxus.request) or request or http_request
+
 Discord.MouseButton1Click:Connect(function()
     Discord.Text = discord
     
@@ -117,13 +119,13 @@ Exit.MouseButton1Click:Connect(function()
 end)
 
 if (getgenv().key == nil) then
-    getgenv().key = "cracked"
+    getgenv().key = "babft"
 end
 
 -- script here
 
-local library = loadstring(request({Url = stringUrl .. "build_a_boat/library"})[stringBody])()
-local listing = loadstring(request({Url = stringUrl .. "build_a_boat/listing"})[stringBody])()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kanarz/thisisactuallycrazymadcrazy/main/library.lua"))()
+local listing = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kanarz/thisisactuallycrazymadcrazy/main/listing.lua"))()
 
 -- Variables
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
